@@ -5,13 +5,19 @@ import { StreetPageComponent } from './street-page/street-page.component';
 import { SharedModule } from '../shared/shared.module';
 import { AnimesPageComponent } from './animes-page/animes-page.component';
 import { HttpClientModule } from '@angular/common/http';
+import { StudentsPageComponent } from './students-page/students-page.component';
+import { CursosPageComponent } from './cursos-page/cursos-page.component';
+import { ClasesPageComponent } from './clases-page/clases-page.component';
 
 
 
 @NgModule({
   declarations: [
     StreetPageComponent,
-    AnimesPageComponent
+    AnimesPageComponent,
+    StudentsPageComponent,
+    CursosPageComponent,
+    ClasesPageComponent
   ],
   imports: [ // IMPORTANDO
     CommonModule,
@@ -22,6 +28,7 @@ import { HttpClientModule } from '@angular/common/http';
   exports: [
     StreetPageComponent,
     AnimesPageComponent,
+    StudentsPageComponent
   ]
 })
 export class PagesModule { }

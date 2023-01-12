@@ -14,7 +14,18 @@ import { MainMenuComponent } from './components/main-menu/main-menu.component';
 import { NavbarCompComponent } from './components/navbar-comp/navbar-comp.component';
 import { ToolboxCompComponent } from './components/toolbox-comp/toolbox-comp.component';
 import { ContenidoCompComponent } from './components/contenido-comp/contenido-comp.component';
-
+import {Routes,RouterModule} from '@angular/router';
+import { BrowserModule } from '@angular/platform-browser';
+import {StudentsPageComponent} from '../pages/students-page/students-page.component';
+import {CursosPageComponent} from   '../pages/cursos-page/cursos-page.component';
+import {ClasesPageComponent} from   '../pages/clases-page/clases-page.component';
+const appRoute: Routes = [
+{path:'',component:StudentsPageComponent},
+{path:'cursos',component:CursosPageComponent},
+{path:'clases',component:ClasesPageComponent} 
+// {path:'Valparaiso',component:ValparaisoComponent} ,
+// {path:'About',component:AboutComponent}
+];
 
 @NgModule({
   declarations: [
@@ -28,7 +39,9 @@ import { ContenidoCompComponent } from './components/contenido-comp/contenido-co
     ContenidoCompComponent,
   ],
   imports: [
-    CommonModule
+    CommonModule,
+RouterModule.forRoot(appRoute),
+BrowserModule,
   ],
   exports: [
     Car1Component,
@@ -45,7 +58,6 @@ import { ContenidoCompComponent } from './components/contenido-comp/contenido-co
     NavbarCompComponent,
     ToolboxCompComponent,
     ContenidoCompComponent,
-
   ]
 })
 export class SharedModule { }
