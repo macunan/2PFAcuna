@@ -19,6 +19,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import {StudentsPageComponent} from '../pages/students-page/students-page.component';
 import {CursosPageComponent} from   '../pages/cursos-page/cursos-page.component';
 import {ClasesPageComponent} from   '../pages/clases-page/clases-page.component';
+import { StudentDialogComponent } from './components/student-dialog/student-dialog.component';
 const appRoute: Routes = [
 {path:'',component:StudentsPageComponent},
 {path:'cursos',component:CursosPageComponent},
@@ -37,6 +38,7 @@ const appRoute: Routes = [
     NavbarCompComponent,
     ToolboxCompComponent,
     ContenidoCompComponent,
+    StudentDialogComponent,
   ],
   imports: [
     CommonModule,
