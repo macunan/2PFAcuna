@@ -4,14 +4,14 @@
         <div class="mb-2">
             <mat-form-field appearance="fill">
                 <mat-label>Nombre</mat-label>
-                <input [formControl]="firstNameControl" matInput placeholder="Placeholder">
+                <input [formControl]="nameControl" matInput placeholder="Placeholder">
                 <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
-                <mat-hint *ngIf="firstNameControl.errors">Hint</mat-hint>
+                <mat-hint *ngIf="nameControl.errors">Hint</mat-hint>
             </mat-form-field>
         </div>
         <mat-form-field appearance="fill">
-            <mat-label>Apellido</mat-label>
-            <input [formControl]="lastNameControl" matInput placeholder="Placeholder">
+            <mat-label>Correo</mat-label>
+            <input [formControl]="emailControl" matInput placeholder="Placeholder">
             <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
             <mat-hint>Hint</mat-hint>
         </mat-form-field>

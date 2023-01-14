@@ -11,12 +11,22 @@ import { Student } from 'src/app/models/student.model';
   ]
 })
 export class StudentDialogComponent {
-  firstNameControl = new FormControl('')
-  lastNameControl = new FormControl('')
+  nameControl = new FormControl('')
+  pass1Control=new FormControl('')
+  pass2Control=new FormControl('')
+  emailControl = new FormControl('')
+  direccionControl = new FormControl('')
+  sexoControl = new FormControl('')
+  edadControl = new FormControl(0)
+
 
   studentForm = new FormGroup({
-    firstName: this.firstNameControl,
-    lastName: this.lastNameControl,
+    name: this.nameControl,
+    password: this.pass1Control,
+    email: this.emailControl,
+    direccion: this.direccionControl,
+    sexo: this.sexoControl,
+    edad: this.edadControl,
   })
 
   constructor(

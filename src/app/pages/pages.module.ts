@@ -10,7 +10,6 @@ import { CursosPageComponent } from './cursos-page/cursos-page.component';
 import { ClasesPageComponent } from './clases-page/clases-page.component';
 
 
-
 @NgModule({
   declarations: [
     StreetPageComponent,
