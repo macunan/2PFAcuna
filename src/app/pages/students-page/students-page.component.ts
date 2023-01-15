@@ -10,13 +10,17 @@ import { StudentService } from 'src/app/services/student.service';
   styleUrls: ['./students-page.component.scss']
 })
 export class StudentsPageComponent {
-  students: any[] = []
+  public students: any[] = []
   constructor(private studentService: StudentService,private readonly dialogService: MatDialog) {
 
-    this.studentService.getStudents().subscribe((students) => (this.students = students));
-
-      console.log(this.students)
   }
+ngOnInit(): void {
+this.studentService.getStudents().subscribe((students) => (this.students = students));
+// this.students = this.studentService.getStudents().subscribe();
+      console.log(this.students)
+// this.newData = this.demoService.Sailors;
+// this.message = this.demoService.getData();
+    }
 
 
   displayedColumns = ['id', 'name', 'email', 'direccion', 'sexo','edad'];
@@ -29,7 +33,7 @@ export class StudentsPageComponent {
     dialog.afterClosed().subscribe((value) => {
       if (value) {
         const lastId = this.students[this.students.length - 1]?.id;
-        this.students = [...this.students, new Student(lastId + 1, value.name, value.email,value.password,value.direccion,value.sexo,value.edad)];
+        this.students = [...this.students, new Student(lastId + 1, value.name, value.email, value.password, value.direccion, value.sexo, value.edad)];
       }
     })
   }
