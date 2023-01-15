@@ -3,10 +3,6 @@ import { MatDialog } from '@angular/material/dialog';
 import { Student } from 'src/app/models/student.model';
 import { StudentDialogComponent } from 'src/app/shared/components/student-dialog/student-dialog.component';
 import { StudentService } from 'src/app/services/student.service';
-import { FormGroup, FormControl } from '@angular/forms';
-import { debounceTime, map, mergeMap } from 'rxjs';
-import { MatTableModule } from '@angular/material/table' 
-
 
 @Component({
   selector: 'app-students-page',

@@ -8,7 +8,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { StudentsPageComponent } from './students-page/students-page.component';
 import { CursosPageComponent } from './cursos-page/cursos-page.component';
 import { ClasesPageComponent } from './clases-page/clases-page.component';
-
+import { FormControl, FormGroup, FormBuilder } from '@angular/forms';
 
 @NgModule({
   declarations: [

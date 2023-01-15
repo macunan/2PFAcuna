@@ -20,11 +20,9 @@ import {StudentsPageComponent} from '../pages/students-page/students-page.compon
 import {CursosPageComponent} from   '../pages/cursos-page/cursos-page.component';
 import {ClasesPageComponent} from   '../pages/clases-page/clases-page.component';
 import { StudentDialogComponent } from './components/student-dialog/student-dialog.component';
-
-
-
-
-
+import { MatTableModule } from '@angular/material/table';
+import { MatDialogModule } from '@angular/material/dialog';
+import { ReactiveFormsModule } from '@angular/forms';
 
 const appRoute: Routes = [
 {path:'',component:StudentsPageComponent},
@@ -50,6 +48,12 @@ const appRoute: Routes = [
     CommonModule,
 RouterModule.forRoot(appRoute),
 BrowserModule,
+  MatTableModule,
+  MatDialogModule,
+  MatFormFieldModule,
+MatInputModule,
+MatIconModule,
+ReactiveFormsModule
   ],
   exports: [
     Car1Component,
@@ -66,6 +70,13 @@ BrowserModule,
     NavbarCompComponent,
     ToolboxCompComponent,
     ContenidoCompComponent,
+    MatTableModule,
+    MatButtonModule,
+    MatIconModule,
+    MatDialogModule,
+    MatFormFieldModule,
+    MatInputModule,
+    StudentDialogComponent,
   ]
 })
 export class SharedModule { }
