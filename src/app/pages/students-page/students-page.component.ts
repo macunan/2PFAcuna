@@ -10,20 +10,18 @@ import { StudentService } from 'src/app/services/student.service';
   styleUrls: ['./students-page.component.scss']
 })
 export class StudentsPageComponent {
-  public students: any[] = []
+  public students: any[] = [];
   constructor(private studentService: StudentService,private readonly dialogService: MatDialog) {
-
+// this.studentService.getStudents().subscribe((students) => (this.students = students));
   }
 ngOnInit(): void {
+
 this.studentService.getStudents().subscribe((students) => (this.students = students));
-// this.students = this.studentService.getStudents().subscribe();
-      console.log(this.students)
-// this.newData = this.demoService.Sailors;
-// this.message = this.demoService.getData();
+console.log(this.students)
     }
 
 
-  displayedColumns = ['id', 'name', 'email', 'direccion', 'sexo','edad'];
+  displayedColumns = ['id', 'name', 'email', 'direccion', 'sexo','edad','edit','delete'];
 
 // constructor(private readonly dialogService: MatDialog) {}
 
@@ -33,26 +31,34 @@ this.studentService.getStudents().subscribe((students) => (this.students = stude
     dialog.afterClosed().subscribe((value) => {
       if (value) {
         const lastId = this.students[this.students.length - 1]?.id;
-        this.students = [...this.students, new Student(lastId + 1, value.name, value.email, value.password, value.direccion, value.sexo, value.edad)];
+        const student = new Student(lastId, value.name, value.email, value.password, value.direccion, value.sexo, value.edad);
+
+
+
+this.studentService.createStudent(student);
+setTimeout(() => {this.ngOnInit(); }, 1000);
       }
     })
   }
 
   // 
   removeStudent(student: Student) {
-    this.students = this.students.filter(
-      (stu) => stu.id !== student.id // Deja todos los elementos donde se cumpla esta condicion
-    );
+this.studentService.delStudent(student.id);
+setTimeout(() => {this.ngOnInit(); }, 1000);
   }
 
   editStudent(student: Student) {
+    console.log("En editStudent")
+    console.log(student)
     const dialog = this.dialogService.open(StudentDialogComponent, {
       data: student,
     })
 
     dialog.afterClosed().subscribe((data) => {
       if (data) {
-        this.students = this.students.map((stu) => stu.id === student.id ? { ...stu, ...data } : stu)
+        console.log("En after close data")
+           console.log(this.studentService.updateStudent(data));
+setTimeout(() => {this.ngOnInit(); }, 1000);
       }
     })
   }

@@ -1,4 +1,4 @@
-<h1 mat-dialog-title>Agregar estudiante</h1>
+<h1 mat-dialog-title>Agregar/Editar estudiante</h1>
 <div mat-dialog-content>
     <form class="flex flex-column" [formGroup]="studentForm">
         <div class="mb-2">
@@ -15,6 +15,55 @@
             <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
             <mat-hint>Hint</mat-hint>
         </mat-form-field>
+
+
+
+        <mat-form-field appearance="fill">
+            <mat-label>Clave</mat-label>
+            <input [formControl]="pass1Control" matInput placeholder="Placeholder">
+            <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+            <mat-hint>Hint</mat-hint>
+        </mat-form-field>
+   
+        <mat-form-field appearance="fill">
+            <mat-label>Direccion</mat-label>
+            <input [formControl]="direccionControl" matInput placeholder="Placeholder">
+            <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+            <mat-hint>Hint</mat-hint>
+        </mat-form-field>
+   
+
+        <mat-form-field appearance="fill">
+            <mat-label>Edad</mat-label>
+            <input [formControl]="edadControl" matInput placeholder="Placeholder">
+            <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+            <mat-hint>Hint</mat-hint>
+        </mat-form-field>
+   
+
+        <mat-form-field appearance="fill">
+            <mat-label>Sexo</mat-label>
+            <input [formControl]="sexoControl" matInput placeholder="Placeholder">
+            <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+            <mat-hint>Hint</mat-hint>
+        </mat-form-field>
+
+
+
+
+
+        <mat-form-field>
+            <mat-label>id</mat-label>
+            <input [readonly]="true" [formControl]="idControl" matInput placeholder="Placeholder">
+            <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+            <mat-hint>Hint</mat-hint>
+        </mat-form-field>
+   
+
+
+
+
+
     </form>
 </div>
 <div mat-dialog-actions>

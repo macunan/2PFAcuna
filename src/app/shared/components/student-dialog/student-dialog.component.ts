@@ -15,8 +15,9 @@ export class StudentDialogComponent {
   pass2Control=new FormControl('')
   emailControl = new FormControl('')
   direccionControl = new FormControl('')
-  sexoControl = new FormControl('')
+  sexoControl = new FormControl('M')
   edadControl = new FormControl(0)
+  idControl = new FormControl('')
 
 
   studentForm = new FormGroup({
@@ -25,7 +26,8 @@ export class StudentDialogComponent {
     email: this.emailControl,
     direccion: this.direccionControl,
     sexo: this.sexoControl,
-    edad: this.edadControl
+    edad: this.edadControl,
+    id:this.idControl
   })
 
   constructor(
@@ -34,6 +36,7 @@ export class StudentDialogComponent {
   ) {
     if (data) {
       this.studentForm.patchValue(data)
+
     }
   }
 
