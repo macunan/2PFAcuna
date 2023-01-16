@@ -6,11 +6,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-
 import { ReactiveFormsModule } from '@angular/forms';
-import { StreetPageComponent } from './street-page/street-page.component';
 import { SharedModule } from '../shared/shared.module';
-import { AnimesPageComponent } from './animes-page/animes-page.component';
 import { HttpClientModule } from '@angular/common/http';
 import { StudentsPageComponent } from './students-page/students-page.component';
 import { CursosPageComponent } from './cursos-page/cursos-page.component';
@@ -19,8 +16,6 @@ import { FormControl, FormGroup, FormBuilder } from '@angular/forms';
 
 @NgModule({
   declarations: [
-    StreetPageComponent,
-    AnimesPageComponent,
     StudentsPageComponent,
     CursosPageComponent,
     ClasesPageComponent
@@ -39,8 +34,6 @@ import { FormControl, FormGroup, FormBuilder } from '@angular/forms';
     MatInputModule,
   ],
   exports: [
-    StreetPageComponent,
-    AnimesPageComponent,
     StudentsPageComponent
   ]
 })
