@@ -1,1 +1,33 @@
-<p>curso-dialog works!</p>
+<h1 mat-dialog-title>Agregar/Editar Cursos</h1>
+<div mat-dialog-content>
+    <form class="flex flex-column" [formGroup]="cursoForm">
+        <div class="mb-2">
+            <mat-form-field appearance="fill">
+                <mat-label>Nombre</mat-label>
+                <input [formControl]="nameControl" matInput placeholder="Placeholder">
+                <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+                <mat-hint *ngIf="nameControl.errors">Hint</mat-hint>
+            </mat-form-field>
+        </div>
+
+
+        <mat-form-field>
+            <mat-label>id</mat-label>
+            <input [readonly]="true" [formControl]="idControl" matInput placeholder="Placeholder">
+            <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+            <mat-hint>Hint</mat-hint>
+        </mat-form-field>
+   
+
+
+
+
+
+    </form>
+</div>
+<div mat-dialog-actions>
+    <button mat-button (click)="close()">Cancelar</button>
+    <button mat-button [mat-dialog-close]="cursoForm.value" cdkFocusInitial>Guardar</button>
+</div>
+
+
